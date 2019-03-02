@@ -7,7 +7,7 @@ var RoomsView = {
   },
 
   renderRoom: function(lobby) {
-    this.$select.append(MessageView.render(lobby));
+    this.$select.append(`<option>${lobby}</option>`);
   }
-
+  
 };

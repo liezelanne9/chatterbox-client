@@ -21,7 +21,13 @@ var App = {
     Parse.readAll((data) => {
       // examine the response from the server request:
       console.log(data);
-
+      for(let i = 0; i < data.results.length; i++){
+        var obj = data.results[i];
+        obj.text = obj.text || '';
+        obj.username = obj.username || 'Anon';
+        MessagesView.renderMessage(obj);
+        RoomsView.renderRoom(obj.roomname);
+      }
       callback();
     });
   },

@@ -4,6 +4,10 @@ body {
     padding: 0 25px;
     font-family: arial, sans-serif;
 }
+select{
+    width: 100px;
+    height: auto;
+}
 
 #main, #chats {
     width: 500px;
