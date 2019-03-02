@@ -12,7 +12,7 @@ var Friends = {
         // console.log(event.delegateTarget.children["0"].childNodes[1].innerText);
         var friend = event.target.innerText; // username
         console.log($(this, '.username').text());
-       $('.' +  friend).addClass('friend'); // adds class to THIS username
+       $('.' +  friend.replace(/[^a-zA-Z0-9 ]/g, "")).addClass('friend'); // adds class to THIS username
 
         // for all divs that also have this username, add class
 
