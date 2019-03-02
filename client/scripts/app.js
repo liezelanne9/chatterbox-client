@@ -29,6 +29,7 @@ var App = {
         RoomsView.renderRoom(obj.roomname);
       }
       callback();
+      
     });
   },
 

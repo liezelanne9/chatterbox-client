@@ -1,6 +1,7 @@
 var Rooms = {
-    // add: function() {
 
-    // }
+// Rooms.add
+    // grab input value
+    // add click listener for add room 
 
 };

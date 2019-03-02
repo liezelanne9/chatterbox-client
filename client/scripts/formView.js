@@ -9,7 +9,19 @@ var FormView = {
   handleSubmit: function(event) {
     // Stop the browser from submitting the form
     event.preventDefault();
-    // $('input').val()
+   
+    var message = {
+    roomname:"liezelAnnie",
+    text: $('input').val(),
+    username: App.username
+    }
+
+    Parse.create(message, function() { console.log($('input').val())
+      // var messageObject = new Messages(message);
+      // MessagesView.renderMessage(message);
+    })
+    App.fetch(App.initialize);
+   
     console.log('click!');
   },
 
@@ -19,3 +31,4 @@ var FormView = {
   }
 
 };
+
