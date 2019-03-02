@@ -1,9 +1,11 @@
 var FormView = {
 
   $form: $('form'),
+  $button: $('button'),
 
   initialize: function() {
     FormView.$form.on('submit', FormView.handleSubmit);
+    FormView.$button.on('click', FormView.handleRoom);
   },
 
   handleSubmit: function(event) {
@@ -11,7 +13,7 @@ var FormView = {
     event.preventDefault();
    
     var message = {
-      roomname: 'liezelAnnie',
+      roomname: $('select').val(),
       text: $('input').val(),
       username: App.username
     };
@@ -27,7 +29,11 @@ var FormView = {
   setStatus: function(active) {
     var status = active ? 'true' : null;
     FormView.$form.find('input[type=submit]').attr('disabled', status);
-  }
+  },
 
+  handleRoom: function(event) {
+    message.roomname = $('input').val();
+    RoomsView.renderRoom(message.roomname);
+  }
 };
 
