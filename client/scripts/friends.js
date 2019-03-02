@@ -3,19 +3,26 @@ var Friends = {
     $chat: $('div'),
 
     initialize: function() {
-        Friends.$chat.on('click', '.chat', '.username', Friends.toggleFriend);
+        Friends.$chat.on('click', '.username', Friends.toggleFriend);
       },
 
-    friendList: [],
+    friendList: {},
 
     toggleFriend: function(event) {
-        var friend = event.currentTarget.childNodes[1].childNodes["0"].data
-        if (!friendList.includes(friend)) {
-            friendList.push(friend);
+        // console.log(event.delegateTarget.children["0"].childNodes[1].innerText);
+        var friend = event.target.innerText; // username
+        console.log($(this, '.username').text());
+       $('.' +  friend).addClass('friend'); // adds class to THIS username
+
+        // for all divs that also have this username, add class
+
+        if (!Friends.friendList.hasOwnProperty(friend)) {
+            Friends.friendList[friend] = friend;
         } else {
-            friendList.splice()
+            delete Friends.friendList[friend];
+            $(this).removeClass('friend');
         }
-        console.log(friend);
+        // console.log(Friends.friendList);
     },
 
 };

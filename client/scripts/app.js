@@ -29,7 +29,9 @@ var App = {
         MessagesView.renderMessage(obj);
         RoomsView.renderRoom(obj.roomname);
       }
-      // setTimeout(this.fetch.bind(this), 1000);
+      // let empty = $('#chats').empty()
+      // setTimeout(empty, 900);
+      //setTimeout(App.fetch, 1000);
       callback();
 
     });
