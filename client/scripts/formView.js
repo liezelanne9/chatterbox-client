@@ -11,17 +11,16 @@ var FormView = {
     event.preventDefault();
    
     var message = {
-    roomname:"liezelAnnie",
-    text: $('input').val(),
-    username: App.username
-    }
+      roomname: 'liezelAnnie',
+      text: $('input').val(),
+      username: App.username
+    };
 
-    Parse.create(message, function() { console.log($('input').val())
-      // var messageObject = new Messages(message);
-      // MessagesView.renderMessage(message);
-    })
-    App.fetch(App.initialize);
-   
+    Parse.create(message);
+    // MessagesView.renderMessage(message);
+    $('#chats').empty();
+    App.fetch();
+  
     console.log('click!');
   },
 

@@ -6,15 +6,15 @@ var App = {
 
   initialize: function() {
     App.username = window.location.search.substr(10);
-
     FormView.initialize();
     RoomsView.initialize();
     MessagesView.initialize();
-
+    
     // Fetch initial batch of messages
     App.startSpinner();
     App.fetch(App.stopSpinner);
-
+    
+    // setInterval(App.fetch, 1000);
   },
 
   fetch: function(callback = ()=>{}) {
@@ -28,8 +28,9 @@ var App = {
         MessagesView.renderMessage(obj);
         RoomsView.renderRoom(obj.roomname);
       }
+      // setTimeout(this.fetch.bind(this), 1000);
       callback();
-      
+
     });
   },
 
