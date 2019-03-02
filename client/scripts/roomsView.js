@@ -6,7 +6,8 @@ var RoomsView = {
   initialize: function() {
   },
 
-  render: function() {
+  renderRoom: function(lobby) {
+    this.$select.append(MessageView.render(lobby));
   }
 
 };
