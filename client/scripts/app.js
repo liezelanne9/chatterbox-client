@@ -10,6 +10,7 @@ var App = {
     RoomsView.initialize();
     MessagesView.initialize();
     Friends.initialize();
+    Rooms.initialize();
     
     // Fetch initial batch of messages
     App.startSpinner();
@@ -25,7 +26,10 @@ var App = {
       for(let i = 0; i < data.results.length; i++){
         var obj = data.results[i];
         obj.text = obj.text || '';
+
         obj.username = obj.username || 'Anon';
+        obj.roomname = obj.roomname || '';
+
         MessagesView.renderMessage(obj);
         RoomsView.renderRoom(obj.roomname);
       }

@@ -7,7 +7,9 @@ var RoomsView = {
   },
 
   renderRoom: function(lobby) {
-    this.$select.append(`<option>${lobby}</option>`);
+    if(!($('option').hasClass(lobby.replace(/ /gi, '')))) {
+      this.$select.append(`<option class='${lobby.replace(/ /gi, '')}'>${lobby}</option>`);
+    }
   }
   
 };

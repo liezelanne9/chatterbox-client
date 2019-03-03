@@ -20,7 +20,7 @@ var Friends = {
             Friends.friendList[friend] = friend;
         } else {
             delete Friends.friendList[friend];
-            $(this).removeClass('friend');
+            $('.' +  friend.replace(/[^a-zA-Z0-9 ]/g, "")).removeClass('friend');
         }
         // console.log(Friends.friendList);
     },
